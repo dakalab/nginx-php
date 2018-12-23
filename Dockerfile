@@ -35,10 +35,15 @@ RUN apt-get install -y -q php-fpm \
 RUN curl -fsSL https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer
 
+RUN sed -i \
+        -e "s/upload_max_filesize = 2M/upload_max_filesize = 100M/g" \
+        -e "s/post_max_size = 8M/post_max_size = 100M/g" \
+        /etc/php/7.2/fpm/php.ini
+
 # clean up temp files
 RUN rm -rf /var/lib/apt/lists/* /tmp/temp/
 
-RUN mkdir /app
+RUN mkdir -p /app/public
 WORKDIR /app
 
 EXPOSE 443 80
@@ -51,7 +56,7 @@ COPY conf/nginx.conf /etc/nginx/nginx.conf
 COPY conf/nginx-site.conf /etc/nginx/sites-available/default.conf
 COPY conf/nginx-site-ssl.conf /etc/nginx/sites-available/default-ssl.conf
 RUN ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/default.conf
-COPY index.php /app/index.php
+COPY index.php /app/public/index.php
 
 COPY start.sh /start.sh
 RUN chmod a+x /start.sh

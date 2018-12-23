@@ -5,7 +5,7 @@
 
 nginx + php, built on ubuntu 18.04 (bionic)
 
-Working directory and httpd root is `/app`
+Working directory is `/app` and http root is `/app/public`
 
 `https` is off by default
 
