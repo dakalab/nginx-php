@@ -4,11 +4,13 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/dakalab/nginx-php.svg)](https://hub.docker.com/r/dakalab/nginx-php)
 [![License](https://img.shields.io/github/license/dakalab/nginx-php.svg)](https://github.com/dakalab/nginx-php)
 
-nginx + php, built on ubuntu 18.04 (bionic)
+*nginx + php, built on ubuntu 18.04 (bionic)*
 
-Working directory is `/app` and http root is `/app/public`
+Working directory is `/app` and http root is `/app/public`.
 
-`https` is off by default
+If you need to run customized scripts, you can mount your scripts into `/scripts` folder.
+
+`https` is off by default, if you want to enable it, you can mount your certificates into `/etc/nginx/ssl` folder.
 
 Component versions:
 
