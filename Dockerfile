@@ -56,7 +56,7 @@ EXPOSE 443 80
 
 RUN mkdir -p /etc/nginx/sites-available/ \
     && mkdir -p /etc/nginx/sites-enabled/ \
-    && mkdir -p /etc/nginx/ssl/ \
+    && mkdir -p /etc/nginx/certs/ \
     && rm -Rf /etc/nginx/conf.d
 COPY conf/nginx.conf /etc/nginx/nginx.conf
 COPY conf/nginx-site.conf /etc/nginx/sites-available/default.conf

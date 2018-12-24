@@ -10,7 +10,7 @@ Working directory is `/app` and http root is `/app/public`.
 
 If you need to run customized scripts, you can mount your scripts into `/scripts` folder.
 
-`https` is off by default, if you want to enable it, you can mount your certificates into `/etc/nginx/ssl` folder.
+`https` is off by default, if you want to enable it, you can mount your certificates into `/etc/nginx/certs` folder.
 
 Component versions:
 

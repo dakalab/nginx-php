@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # if certificates are provided
-if [ -s "/etc/nginx/ssl/fullchain.pem" ] && [ -s "/etc/nginx/ssl/privkey.pem" ]; then
+if [ -s "/etc/nginx/certs/default.crt" ] && [ -s "/etc/nginx/certs/default.key" ]; then
 	ln -s /etc/nginx/sites-available/default-ssl.conf /etc/nginx/sites-enabled/default-ssl.conf
 fi
 
