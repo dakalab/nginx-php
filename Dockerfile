@@ -2,6 +2,7 @@ FROM ubuntu:18.04
 LABEL maintainer="hyperjiang@gmail.com"
 
 ENV DEBIAN_FRONTEND noninteractive
+ENV COMPOSER_ALLOW_SUPERUSER 1
 
 RUN mkdir -p /tmp/temp
 WORKDIR /tmp/temp
