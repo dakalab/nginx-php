@@ -16,7 +16,7 @@ Component versions:
 
 - composer: v1.8.0
 - nginx: v1.14.2
-- node: v10.14.2
-- nvm: v0.33.11
-- php: v7.2.13
+- node: v10.15.0
+- nvm: v0.34.0
+- php: v7.2.10
 - ubuntu: v18.04.1
