@@ -14,9 +14,9 @@ If you need to run customized scripts, you can mount your scripts into `/scripts
 
 Component versions:
 
-- composer: v1.8.0
-- nginx: v1.14.2
-- node: v10.15.0
+- composer: v1.8.5
+- nginx: v1.16.0
+- node: v10.15.3
 - nvm: v0.34.0
-- php: v7.2.10
-- ubuntu: v18.04.1
+- php: v7.2.17
+- ubuntu: v18.04.2
