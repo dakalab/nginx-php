@@ -45,6 +45,7 @@ RUN curl -fsSL https://getcomposer.org/installer | php \
 RUN sed -i \
         -e "s/upload_max_filesize = 2M/upload_max_filesize = 100M/g" \
         -e "s/post_max_size = 8M/post_max_size = 100M/g" \
+        -e "s/short_open_tag = Off/short_open_tag = On/g" \
         /etc/php/7.2/fpm/php.ini
 
 # clean up temp files
