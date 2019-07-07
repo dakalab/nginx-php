@@ -33,6 +33,7 @@ RUN apt-get install -y -q php-fpm \
     php-mbstring \
     php-mysql \
     php-pgsql \
+    php-sqlite3 \
     php-soap \
     php-tidy \
     php-xdebug \
