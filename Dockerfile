@@ -20,7 +20,9 @@ RUN wget http://nginx.org/keys/nginx_signing.key \
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash \
     && apt-get install -y nodejs
 
-RUN curl -o- -L https://yarnpkg.com/install.sh | bash
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
+    && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
+    && apt-get update && apt-get install -y yarn
 
 RUN apt-get install -y -q php-fpm \
     php-dev \
