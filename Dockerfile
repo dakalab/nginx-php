@@ -10,7 +10,7 @@ WORKDIR /tmp/temp
 COPY sources.list ./
 
 RUN apt-get update && \
-    apt-get install -y -q build-essential cron curl git gnupg net-tools wget
+    apt-get install -y -q build-essential cron curl git gnupg net-tools wget zlib1g-dev
 
 RUN wget http://nginx.org/keys/nginx_signing.key \
     && apt-key add nginx_signing.key \
@@ -33,6 +33,7 @@ RUN apt-get install -y -q php-fpm \
     php-intl \
     php-mbstring \
     php-mysql \
+    php-pear \
     php-pgsql \
     php-sqlite3 \
     php-soap \
@@ -43,6 +44,15 @@ RUN apt-get install -y -q php-fpm \
 
 RUN curl -fsSL https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer
+
+RUN pecl channel-update pecl.php.net && pecl install grpc-1.22.0 protobuf-3.9.1
+
+COPY conf/grpc.ini /etc/php/7.2/mods-available/grpc.ini
+COPY conf/protobuf.ini /etc/php/7.2/mods-available/protobuf.ini
+RUN ln -s /etc/php/7.2/mods-available/grpc.ini /etc/php/7.2/fpm/conf.d/20-grpc.ini
+RUN ln -s /etc/php/7.2/mods-available/grpc.ini /etc/php/7.2/cli/conf.d/20-grpc.ini
+RUN ln -s /etc/php/7.2/mods-available/protobuf.ini /etc/php/7.2/fpm/conf.d/20-protobuf.ini
+RUN ln -s /etc/php/7.2/mods-available/protobuf.ini /etc/php/7.2/cli/conf.d/20-protobuf.ini
 
 RUN sed -i \
         -e "s/upload_max_filesize = 2M/upload_max_filesize = 100M/g" \
