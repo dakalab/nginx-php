@@ -45,7 +45,7 @@ RUN apt-get install -y -q php-fpm \
 RUN curl -fsSL https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer
 
-RUN pecl channel-update pecl.php.net && pecl install grpc-1.22.0 protobuf-3.9.1
+RUN pecl channel-update pecl.php.net && pecl install grpc-1.25.0 protobuf-3.10.0
 
 COPY conf/grpc.ini /etc/php/7.2/mods-available/grpc.ini
 COPY conf/protobuf.ini /etc/php/7.2/mods-available/protobuf.ini
