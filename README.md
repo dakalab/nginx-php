@@ -6,17 +6,17 @@
 
 *nginx + php + nodejs, built on ubuntu 18.04 (bionic)*
 
-Working directory is `/app` and http root is `/app/public`.
+Working directory is `/app` and http root is `/app/default`.
 
 If you need to run customized scripts, you can mount your scripts into `/scripts` folder.
 
-`https` is off by default, if you want to enable it, you can mount your certificates into `/etc/nginx/certs` folder.
+You can run `docker run --rm dakalab/nginx-php php -m` to show pre-installed php modules.
 
 Component versions:
 
-- composer: v1.9.1
-- nginx: v1.16.1
-- node: v10.17.0
-- php: v7.2.24 (with modules grpc v1.25.0 and protobuf v3.10.0)
+- composer: v1.10.6
+- nginx: v1.18.0
+- node: v12.17.0
+- php: v7.2.24
 - ubuntu: v18.04.2
-- yarn: v1.19.1
+- yarn: v1.22.4
