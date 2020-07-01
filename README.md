@@ -14,9 +14,9 @@ You can run `docker run --rm dakalab/nginx-php php -m` to show pre-installed php
 
 Component versions:
 
-- composer: v1.10.6
+- composer: v1.10.8
 - nginx: v1.18.0
-- node: v12.17.0
+- node: v12.18.2
 - php: v7.2.24
-- ubuntu: v18.04.2
+- ubuntu: v18.04.4
 - yarn: v1.22.4
