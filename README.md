@@ -6,7 +6,7 @@
 
 *nginx + php + nodejs, built on ubuntu 18.04 (bionic)*
 
-Working directory is `/app` and http root is `/app/default`.
+Working directory is `/app` and http root is `/app/public`.
 
 If you need to run customized scripts, you can mount your scripts into `/scripts` folder.
 

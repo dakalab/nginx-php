@@ -105,7 +105,7 @@ RUN sed -i \
 # clean up temp files
 RUN rm -rf /var/lib/apt/lists/* /tmp/temp/
 
-RUN mkdir -p /app/default
+RUN mkdir -p /app/public
 WORKDIR /app
 
 EXPOSE 443 80
@@ -116,7 +116,7 @@ RUN mkdir -p /etc/nginx/sites-available/ \
 COPY conf/nginx.conf /etc/nginx/nginx.conf
 COPY conf/default.conf /etc/nginx/sites-available/default.conf
 RUN ln -s /etc/nginx/sites-available/default.conf /etc/nginx/sites-enabled/default.conf
-COPY index.php /app/default/index.php
+COPY index.php /app/public/index.php
 
 COPY start.sh /start.sh
 RUN chmod a+x /start.sh
